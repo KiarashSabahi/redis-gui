@@ -1,0 +1,54 @@
+.connection {
+    height: 75px;
+    width: 300px;
+    background-color: rgba(245,243,244,0.16);
+    border-radius: 7px;
+    margin: 0 0 20px 20px ;
+    cursor: pointer;
+}
+
+.connection-left {
+    position: absolute;
+    width: 270px;
+    padding-left: 8px;
+    height: 75px;
+}
+
+.connection-name {
+    color: #D8D3D3;
+    font-size: 21px;
+    padding-top: 2px;
+    position: absolute;
+    font-family: Tahoma, serif;
+    letter-spacing: 1px;
+    width: 275px;
+    height: 47px;
+    display: flex;
+    align-items: center;
+}
+
+.connection-address {
+    color: #a3a1a1;
+    position: absolute;
+    width: 275px;
+    font-family: "Nirmala UI", serif;
+    font-size: 15px;
+    letter-spacing: 0;
+    margin-top: 48px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+}
+
+.connection-right {
+    position: absolute;
+    width: 30px;
+    height: 75px;
+    margin-left: 270px;
+}
+
+.connection-button {
+    padding: 2px 1px 2px 1px;
+    margin-left: 3px;
+    width: 18px;
+}

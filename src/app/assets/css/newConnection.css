@@ -1,0 +1,73 @@
+#new-connection {
+    width: 100%;
+    height: calc(100% - 40px);
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#new-connection-title {
+    font-family: Arial, serif;
+    font-size: 18px;
+    color: #D8D3D3;
+    margin: 0 0 30px 0;
+}
+
+#new-connection-form {
+    font-family: Verdana, serif;
+    margin-top: 100px;
+    width: 625px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.input-label {
+    width: 120px;
+    color: #D8D3D3;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    justify-content: left;
+}
+
+input {
+    font-family: Bahnschrift, serif;
+    font-size: 16px;
+    color: #D8D3D3;
+    margin-top: 15px;
+    height: 26px;
+    margin-bottom: 9px;
+    background-color: transparent;
+    border-style: none;
+    border-bottom-style: solid;
+    width: 500px;
+}
+
+#buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#add-button {
+    font-family: Arial, serif;
+    font-size: 14px;
+    margin-top: 35px;
+    background-color: rgba(168, 47, 50, 70);
+    border-style: none;
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+}

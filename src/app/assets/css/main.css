@@ -1,0 +1,61 @@
+body {
+    overflow-y: hidden;
+}
+
+.app {
+    background-color: #161A1D;
+    overflow-y: hidden;
+}
+
+.parent {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+#header {
+    height: 22px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    -webkit-user-select: none;
+
+}
+
+#title {
+    font-family: Bahnschrift, serif;
+    font-size: 17px;
+    padding: 7px 0 0 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: #D8D3D3;
+    -webkit-app-region: drag;
+    flex-grow: 10;
+}
+
+#headerButtons {
+    justify-content: right;
+    padding: 4px 8px 0 0;
+}
+
+#minimize-button {
+    width: 20px;
+    margin-right: 10px;
+    cursor: pointer
+}
+
+#close-button {
+    width: 20px;
+    cursor: pointer
+}
+
+
+.main {
+    width: calc(100% - 250px);
+    position: relative;
+    display: flex;
+    background-color: #161A1D;
+ }
