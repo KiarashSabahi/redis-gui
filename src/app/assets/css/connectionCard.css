@@ -1,7 +1,9 @@
+@import "global.css";
+
 .connection {
     height: 75px;
     width: 300px;
-    background-color: rgba(245,243,244,0.16);
+    background-color: var(--card-background);
     border-radius: 7px;
     margin: 0 0 20px 20px ;
     cursor: pointer;
@@ -15,7 +17,7 @@
 }
 
 .connection-name {
-    color: #D8D3D3;
+    color: var(--test-white);
     font-size: 21px;
     padding-top: 2px;
     position: absolute;

@@ -1,3 +1,5 @@
+@import "global.css";
+
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -10,7 +12,7 @@
 
 .menu {
     margin-top:5px;
-    background-color: rgba(168, 47, 50, 70);
+    background-color: var(--menu-red);
     position: relative;
     height: calc(100vh - 22px);
     width: 250px;
@@ -29,20 +31,18 @@
     align-items: center;
     font-family: Bahnschrift, serif;
     font-size: 19px;
-    border-bottom: #161A1D;
+    border-bottom: var(--dark-background);
     border-bottom-style: solid;
     border-bottom-width: thin;
 }
 
 .menu-button.unselected{
-    /*background-color: rgba(168, 47, 50, 70);*/
-    color: #161A1D;
+    color: var(--dark-background);
 }
 
 .menu-button.selected{
-    /*background-color: #161A1D;*/
-    /*color: #D8D3D3;*/
-    color: #161A1D;
+
+    color: var(--dark-background);
     border-left-style: solid;
     border-left-width: 15px;
     padding-right: 15px;

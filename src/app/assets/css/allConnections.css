@@ -1,3 +1,5 @@
+@import "global.css";
+
 #connectionsWrapper {
     height: calc(100% - 22px);
     width: 100%;
@@ -25,14 +27,14 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: #D8D3D3;
-    border-left: 9px solid #161A1D;
-    border-right: 9px solid #161A1D;
+    background: var(--test-white);
+    border-left: 9px solid var(--dark-background);
+    border-right: 9px solid var(--dark-background);
 
 }
 
 ::-webkit-scrollbar-thumb {
     background: #D8D3D3;
-    border-left: 7px solid #161A1D;
-    border-right: 7px solid #161A1D;
+    border-left: 7px solid var(--dark-background);
+    border-right: 7px solid var(--dark-background);
 }
