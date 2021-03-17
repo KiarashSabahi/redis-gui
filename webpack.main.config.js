@@ -8,6 +8,11 @@ module.exports = {
   module: {
     rules: require('./webpack.rules'),
   },
+  devServer: {
+    historyApiFallback: {
+      index: "app/index.html"
+    }
+  },
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json']
   },
