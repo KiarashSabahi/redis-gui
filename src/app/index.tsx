@@ -32,7 +32,7 @@ ReactDOM.render(
 						<Route path="/">
 							<Main component={AllConnections} />
 						</Route>
-						<Route component={AllConnections}/>
+						<Route component={AllConnections} />
 					</Switch>
 				</div>
 			</div>
