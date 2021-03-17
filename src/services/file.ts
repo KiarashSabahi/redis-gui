@@ -2,6 +2,7 @@ import fs from "fs"
 import path from "path"
 import {app, remote} from "electron";
 import {Connection} from "../types/Connection";
+import {randomBytes} from "crypto"
 
 const userDataPath = path.join((app || remote.app).getPath('userData'), "connections" + '.json');
 const userErrorPath = path.join((app || remote.app).getPath('userData'), "log" + '.txt');
@@ -20,6 +21,7 @@ export const addConnection = (connection: Connection) => {
     try {
         let rawData = fs.readFileSync(userDataPath).toString();
         const data = JSON.parse(rawData);
+        connection.id = randomBytes(4).toString("hex");
         data.connections.push(connection);
         rawData = JSON.stringify(data);
         fs.writeFileSync(userDataPath, rawData);
@@ -70,6 +72,7 @@ const writeError = (error: any) => {
     try {
         if (error.errno == -4058) {
             fs.writeFileSync(userDataPath, JSON.stringify({connections: []}));
+            console.log(error)
         } else {
             throw error
         }
