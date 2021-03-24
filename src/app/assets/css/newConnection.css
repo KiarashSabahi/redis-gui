@@ -45,7 +45,7 @@
     justify-content: left;
 }
 
-input {
+#inputs input {
     font-family: Bahnschrift, serif;
     font-size: 16px;
     color: var(--test-white);
