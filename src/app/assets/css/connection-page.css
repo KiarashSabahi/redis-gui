@@ -1,0 +1,104 @@
+@import "global.css";
+
+#page-wrapper {
+    flex-grow: 1;
+    margin-top: 5px;
+    padding: 0 15px 15px 15px;
+    display: flex;
+}
+
+#connection {
+    flex-grow: 1;
+}
+
+#controller {
+    border-bottom-style: solid;
+    border-bottom-color: #707070;
+    border-bottom-width: thin;
+    height: 110px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#connection-header {
+    padding-top: 5px;
+    height: 45px;
+    letter-spacing: 1.2px;
+}
+
+#connection-title {
+    padding: 5px 0 0 0;
+    font-size: 25px;
+    letter-spacing: 1.2px;
+    font-family: Bahnschrift, serif;
+    color: var(--text-white)
+}
+
+#input-wrapper {
+    height: 45px ;
+    margin: 0 0 15px 0;
+    display: flex;
+    flex-direction: row;
+}
+
+#interaction-wrapper {
+    background-color: var(--card-background);
+    flex-grow: 1;
+    box-sizing: border-box;
+    display: flex;
+    margin-right: 8px;
+    align-items: center;
+}
+
+#method-dropdown-wrapper {
+    outline: none;
+    cursor: pointer;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    width: 125px;
+    background-color: var(--card-background);
+    border-style: none;
+    border-right-style: solid;
+    border-right-color: var(--dark-background);
+    border-right-width: 1.5px;
+    color: var(--text-white)
+}
+
+#send-button {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    width: 115px;
+    background-color: var(--menu-red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--dark-background);
+}
+
+#connection-input-wrapper {
+    height: 45px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.connection-input {
+    background-color: var(--card-background);
+    outline: none;
+    width: 100%;
+    border: none;
+    border-right-style: solid;
+    border-right-color: var(--dark-background);
+    border-right-width: 1.5px;
+    padding-left: 10px;
+    color: var(--text-white);
+    font-weight: 500;
+    letter-spacing: 0.8px;
+}
