@@ -1,6 +1,5 @@
 import { app, BrowserWindow, ipcMain } from "electron";
 import Redis from "./services/Redis";
-import { getConnections } from "./services/file";
 declare const MAIN_WINDOW_WEBPACK_ENTRY: any;
 
 let mainWindow: any;
@@ -13,10 +12,10 @@ if (require("electron-squirrel-startup")) {
 const createWindow = (): void => {
 	mainWindow = new BrowserWindow({
 		backgroundColor: "#161A1D",
-		width: 1275,
-		minWidth: 620,
-		height: 850,
-		minHeight: 475,
+		width: 1240,
+		minWidth: 920,
+		height: 880,
+		minHeight: 620,
 		frame: false,
 		webPreferences: {
 			nodeIntegration: true,
