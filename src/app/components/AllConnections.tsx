@@ -1,25 +1,17 @@
 import React, { useState, useEffect } from "react";
 import ConnectionCard from "./ConnecionCard";
 import "../assets/css/allConnections.css";
-import { ipcRenderer } from "electron";
+import { Connection } from "../types/Connection";
+import { ipcSend } from "../utils/ipc";
 
 const AllConnections = () => {
 	const [connections, setConnections] = useState([]);
 
 	useEffect(() => {
-		const ipcListener = (event, connectionsList, err) => {
-			if (err) {
-				console.log(err);
-				return;
-			}
-			setConnections(connectionsList);
-		};
-		ipcRenderer.send("connections:getAll");
-		ipcRenderer.on("connections:getAll", ipcListener);
-
-		return () => {
-			ipcRenderer.removeListener("connections:getAll", ipcListener);
-		};
+		(async () => {
+			const data: Connection[] = await ipcSend("connections:getAll");
+			setConnections(data);
+		})();
 	}, []);
 
 	const deleteConnection = (connection: any) => {

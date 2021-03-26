@@ -1,7 +1,6 @@
 import { ipcRenderer } from "electron";
-import { Connection } from "../types/Connection";
 
-export const ipcSend = async (event: string, input: any) => {
+export const ipcSend = async (event: string, input?: any) => {
 	const ipcRendererSync = () =>
 		new Promise((resolve, reject) => {
 			const ipcListener = (event, item, err) => {
@@ -14,5 +13,5 @@ export const ipcSend = async (event: string, input: any) => {
 			ipcRenderer.on(event, ipcListener);
 		});
 	ipcRenderer.send(event, input);
-	return (await ipcRendererSync()) as Connection;
+	return (await ipcRendererSync()) as any;
 };

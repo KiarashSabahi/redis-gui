@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ipcRenderer } from "electron";
 import { Connection } from "../types/Connection";
 import "../assets/css/connection-page.css";
 import ConnectionInput from "./ConnectionInput";
+import { ipcSend } from "../utils/ipc";
 
 const ConnectionPage = () => {
 	const { id }: { id: string } = useParams();
@@ -15,21 +15,10 @@ const ConnectionPage = () => {
 		setInputCounter(JSON.parse(event.target.value));
 	};
 	useEffect(() => {
-		const ipcListener = (event, item, err) => {
-			if (err) {
-				console.log(err);
-				console.log();
-				return;
-			}
-			setConnection(item);
-			console.log(item);
-		};
-		ipcRenderer.send("connections:connect", id);
-		ipcRenderer.on("connections:connect", ipcListener);
-
-		return () => {
-			ipcRenderer.removeListener("connections:connect", ipcListener);
-		};
+		(async () => {
+			const data: Connection = await ipcSend("connections:connect", { id });
+			setConnection(data);
+		})();
 	}, []);
 
 	return (

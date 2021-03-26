@@ -9,10 +9,10 @@ ipcMain.on("connections:getAll", () => {
 	mainWindow.send("connections:getAll", connections);
 });
 
-ipcMain.on("connections:connect", (event, id: string) => {
+ipcMain.on("connections:connect", (event, input: { id: string }) => {
 	try {
 		const connections = getConnections().connections;
-		const connection = connections.find((item) => item.id == id);
+		const connection = connections.find((item) => item.id == input.id);
 		activeConnections.push(new Redis(connection.address, connection.password));
 		mainWindow.send("connections:connect", connection, null);
 	} catch (error) {
