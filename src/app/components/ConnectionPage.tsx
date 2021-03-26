@@ -42,18 +42,17 @@ const ConnectionPage = () => {
 					</div>
 					<div id={"input-wrapper"}>
 						<div id={"interaction-wrapper"}>
-							<select id={"method-dropdown-wrapper"} onChange={dropdownChange}>
+							<select
+								id={"method-dropdown-wrapper"}
+								onChange={dropdownChange}
+								defaultValue={JSON.stringify({ name: "GETALL", placeholders: [] })}
+							>
 								<option value={JSON.stringify({ name: "GET", placeholders: ["KEY"] })}>GET</option>
 								<option value={JSON.stringify({ name: "SET", placeholders: ["KEY", "VALUE"] })}>
 									SET
 								</option>
 								<option value={JSON.stringify({ name: "DEL", placeholders: ["KEY"] })}>DEL</option>
-								<option
-									selected={true}
-									value={JSON.stringify({ name: "GETALL", placeholders: [] })}
-								>
-									GETALL
-								</option>
+								<option value={JSON.stringify({ name: "GETALL", placeholders: [] })}>GETALL</option>
 								<option value={JSON.stringify({ name: "HGET", placeholders: ["HKEY", "KEY"] })}>
 									HGET
 								</option>
