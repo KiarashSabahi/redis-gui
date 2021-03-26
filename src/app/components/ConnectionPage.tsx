@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Connection } from "../types/Connection";
 import "../assets/css/connection-page.css";
 import ConnectionInput from "./ConnectionInput";
 import { ipcSend } from "../utils/ipc";
+import { DataContext } from "../store/DataContext";
 
 const ConnectionPage = () => {
 	const { id }: { id: string } = useParams();
 
 	const [inputCounter, setInputCounter] = useState({ name: "GETALL", placeholders: [] });
 	const [connection, setConnection] = useState<Connection | undefined>(undefined);
+	const dataContext = useContext(DataContext);
 
 	const dropdownChange = (event) => {
 		setInputCounter(JSON.parse(event.target.value));
@@ -36,24 +38,59 @@ const ConnectionPage = () => {
 								onChange={dropdownChange}
 								defaultValue={JSON.stringify({ name: "GETALL", placeholders: [] })}
 							>
-								<option value={JSON.stringify({ name: "GET", placeholders: ["KEY"] })}>GET</option>
-								<option value={JSON.stringify({ name: "SET", placeholders: ["KEY", "VALUE"] })}>
+								<option
+									value={JSON.stringify({ name: "GET", placeholders: ["KEY"] })}
+								>
+									GET
+								</option>
+								<option
+									value={JSON.stringify({
+										name: "SET",
+										placeholders: ["KEY", "VALUE"],
+									})}
+								>
 									SET
 								</option>
-								<option value={JSON.stringify({ name: "DEL", placeholders: ["KEY"] })}>DEL</option>
-								<option value={JSON.stringify({ name: "GETALL", placeholders: [] })}>GETALL</option>
-								<option value={JSON.stringify({ name: "HGET", placeholders: ["HKEY", "KEY"] })}>
+								<option
+									value={JSON.stringify({ name: "DEL", placeholders: ["KEY"] })}
+								>
+									DEL
+								</option>
+								<option
+									value={JSON.stringify({ name: "GETALL", placeholders: [] })}
+								>
+									GETALL
+								</option>
+								<option
+									value={JSON.stringify({
+										name: "HGET",
+										placeholders: ["HKEY", "KEY"],
+									})}
+								>
 									HGET
 								</option>
 								<option
-									value={JSON.stringify({ name: "HSET", placeholders: ["HKEY", "KEY", "VALUE"] })}
+									value={JSON.stringify({
+										name: "HSET",
+										placeholders: ["HKEY", "KEY", "VALUE"],
+									})}
 								>
 									HSET
 								</option>
-								<option value={JSON.stringify({ name: "HDEL", placeholders: ["HKEY", "KEY"] })}>
+								<option
+									value={JSON.stringify({
+										name: "HDEL",
+										placeholders: ["HKEY", "KEY"],
+									})}
+								>
 									HDEL
 								</option>
-								<option value={JSON.stringify({ name: "HGETALL", placeholders: ["HKEY"] })}>
+								<option
+									value={JSON.stringify({
+										name: "HGETALL",
+										placeholders: ["HKEY"],
+									})}
+								>
 									HGETALL
 								</option>
 							</select>

@@ -9,6 +9,7 @@ import SideMenu from "./components/SideMenu";
 import Main from "./components/Main";
 import NewConnection from "./components/NewConnection";
 import Header from "./components/Header";
+import DataProvider from "./store/DataContext";
 import ConnectionPage from "./components/ConnectionPage";
 
 ReactDOM.render(
@@ -28,7 +29,11 @@ ReactDOM.render(
 						<Route path="/connection/recent">
 							<Main component={NewConnection} />
 						</Route>
-						<Route path="/connection/:id" component={ConnectionPage} />
+						<Route path="/connection/:id">
+							<DataProvider>
+								<ConnectionPage />
+							</DataProvider>
+						</Route>
 						<Route path="/">
 							<Main component={AllConnections} />
 						</Route>
