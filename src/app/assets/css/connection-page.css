@@ -9,6 +9,8 @@
 
 #connection {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 #controller {
@@ -67,7 +69,7 @@
     border-right-style: solid;
     border-right-color: var(--dark-background);
     border-right-width: 1.5px;
-    color: var(--text-white)
+    color: var(--text-white);
 }
 
 #send-button {

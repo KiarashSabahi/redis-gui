@@ -5,6 +5,7 @@ import "../assets/css/connection-page.css";
 import ConnectionInput from "./ConnectionInput";
 import { ipcSend } from "../utils/ipc";
 import { DataContext } from "../store/DataContext";
+import ConnectionDisplay from "./ConnectionDisplay";
 
 const ConnectionPage = () => {
 	const { id }: { id: string } = useParams();
@@ -20,6 +21,7 @@ const ConnectionPage = () => {
 		(async () => {
 			const data: Connection = await ipcSend("connections:connect", { id });
 			setConnection(data);
+			await dataContext.getAll();
 		})();
 	}, []);
 
@@ -99,7 +101,7 @@ const ConnectionPage = () => {
 						<div id={"send-button"}>Send</div>
 					</div>
 				</div>
-				<div id={"display"}></div>
+				<ConnectionDisplay />
 			</div>
 		</div>
 	);
